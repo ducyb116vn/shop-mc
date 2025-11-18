@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clone Website Exercise</title>
+  <!-- <link rel="stylesheet" href="./assets/css/auth.css"> -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<style>
+  @keyframes rainbow {
+    0% {
+      color: red;
+    }
+
+    14% {
+      color: orange;
+    }
+
+    28% {
+      color: yellow;
+    }
+
+    42% {
+      color: green;
+    }
+
+    57% {
+      color: blue;
+    }
+
+    71% {
+      color: indigo;
+    }
+
+    85% {
+      color: violet;
+    }
+
+    100% {
+      color: red;
+    }
+  }
+
+  .blink {
+    animation: rainbow 2s linear infinite;
+  }
+</style>
+
+<body>
+  <div
+    class="w-full min-h-screen bg-[url('https://accminecraft.net/image/minecraft-hoa-anh-dao-background.webp')] bg-cover bg-center">
+    <script src="main.js"></script>
+    <header class="header w-full flex justify-between items-center bg-black/80 px-2 py-1 flex-wrap">
+      <a href="https://accminecraft.net/" rel="noopener" target="_blank">
+        <img class="w-40 h-40 ml-6" src="https://accminecraft.net/image/icon/logo2.png" alt="Logo" />
+      </a>
+      <div class="menu flex gap-10 text-white font-semibold text-lg mr-6 items-center ">
+        <p class="cursor-pointer hover:opacity-50 duration-150">About</p>
+        <p class="cursor-pointer hover:opacity-50 duration-150">Service</p>
+        <p class="cursor-pointer hover:opacity-50 duration-150">Contact</p>
+        <div class="relative group">
+          <p class="cursor-pointer hover:opacity-50 duration-150">Account</p>
+          <ul class="hidden absolute right-0 text-white group-hover:block">
+            <li class="text-right text-sm hover:opacity-50 duration-150"><a href="login.html">Login</a></li>
+            <li class="text-right text-sm hover:opacity-50 duration-150"><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="Introduction flex flex-col items-center mt-15 gap-10 text-center">
+      <p class="text-black/70 text-5xl font-semibold">Welcome To AccMinecraft</p>
+      <p class="blink text-xl ">Where Has A Lot of Reasonable Premium Minecraft Accounts</p>
+      <button class="h-15 bg-blue-300/80 p-3 rounded-lg duration-150"><a
+          class="cursor-pointer text-purple-800 hover:text-purple-600 font-semibold text-lg"
+          href="https://www.minecraftforum.net/forums/minecraft-java-edition/discussion/2130997-difference-between-premium-account-and-regular"
+          target="_blank" rel="noopener">What is Premium Minecraft Account?</a></button>
+      <input class="rounded-lg h-12 w-full sm:w-170 bg-white/80 p-4" type="text" placeholder="Tìm kiếm ở đây...">
+    </div>
+    <div class="ITEMS w-full mt-10 flex justify-around flex-wrap gap-x-6 gap-y-10">
+      <div class="NFA w-60 cursor-pointer hover:opacity-90 duration-150">
+        <div
+          class="h-50 bg-[url(https://accminecraft.net/image/product/ae74e64e015aa2f60cbf49a2505136724WyOd)] bg-cover bg-bottom rounded-t-lg">
+        </div>
+        <div class="h-35 bg-white/80 flex flex-col items-center p-1 rounded-b-lg">
+          <p>Non-Full Access Accounts</p>
+          <p>Price: 3$</p>
+          <p>- NFA means you do not have any access to your account.(Email, Password, Skin,...)</p>
+        </div>
+      </div>
+      <div class="SFA w-60 cursor-pointer hover:opacity-90 duration-150">
+        <div
+          class="h-50 bg-[url(https://accminecraft.net/image/product/ae74e64e015aa2f60cbf49a2505136724WyOd)] bg-cover bg-bottom rounded-t-lg">
+        </div>
+        <div class="h-35 bg-white/80 flex flex-col items-center p-1 rounded-b-lg">
+          <p>Semi-Full Access Accounts</p>
+          <p>Price: 7$</p>
+          <p>- SFA means you have limited access to your account.(Email or Password or Skin or,...)</p>
+        </div>
+      </div>
+      <div class="MFA w-60 cursor-pointer hover:opacity-90 duration-150">
+        <div
+          class="h-50 bg-[url(https://accminecraft.net/image/product/ae74e64e015aa2f60cbf49a2505136724WyOd)] bg-cover bg-bottom rounded-t-lg">
+        </div>
+        <div class="h-35 bg-white/80 flex flex-col items-center p-1 rounded-b-lg">
+          <p>Mail-Full Access Accounts</p>
+          <p>Price: 15$</p>
+          <p>- MFA means you have full access to your account's email</p>
+        </div>
+      </div>
+      <div class="Cape w-60 cursor-pointer hover:opacity-90 duration-150">
+        <div
+          class="h-50 bg-[url(https://accminecraft.net/image/product/ae74e64e015aa2f60cbf49a2505136724WyOd)] bg-cover bg-bottom rounded-t-lg">
+        </div>
+        <div class="h-35 bg-white/80 flex flex-col items-center p-1 rounded-b-lg">
+          <p>Cape OF</p>
+          <p>Price: 5$</p>
+          <p>- It's a custom cape attached to your Minecraft character ( Using OptiFine to see your cape)</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</body>
