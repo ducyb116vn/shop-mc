@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="header max-w-[1680px] mx-auto p-5 flex justify-between items-center">
+    <div class="header max-w-[1680px] mx-auto p-5 flex justify-between items-center max-lg:w-screen">
 
         <!-- Logo -->
         <div class="logo flex items-center">
@@ -25,7 +25,7 @@
             class="menu flex gap-8 text-gray-700 text-xl max-lg:max-h-0 max-lg:hidden peer-checked:max-lg:max-h-96 peer-checked:max-lg:block max-lg:absolute max-lg:bg-white max-lg:p-4 max-lg:top-15 max-lg:right-0">
             <li><a class="hover:border-b-blue-400 hover:border-b-[4px]" href="index.html">Photos</a></li>
             <li><a class="hover:border-b-blue-400 hover:border-b-[4px]" href="#Videos">Videos</a></li>
-            <li><a class="hover:border-b-blue-400 hover:border-b-[4px]" href="#About">About</a></li>
+            <li><a class="hover:border-b-blue-400 hover:border-b-[4px]" href="about.html">About</a></li>
             <li><a class="hover:border-b-blue-400 hover:border-b-[4px]" href="#Contact">Contact</a></li>
         </ul>
 
@@ -41,8 +41,8 @@
         <div class="absolute inset-0 bg-black/30"></div>
 
         <div class="relative search-bar flex items-center">
-            <input class="bg-white h-[50px] w-[360px] px-[15px] py-3 text-[#3b837f]" type="search" placeholder="Search">
-            <button class="bg-[#009999] h-[50px] w-[100px] px-3 py-[6px] cursor-pointer hover:bg-green-700">
+            <input class="bg-white h-[50px] w-[360px] max-lg:w-[200px] px-[15px] py-3 text-[#3b837f]" type="search" placeholder="Search">
+            <button class="bg-[#009999] h-[50px] w-[100px] max-lg:w-[50px] px-3 py-[6px] cursor-pointer hover:bg-green-700">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
         </div>
@@ -53,14 +53,14 @@
             <div class="row-text">
                 <p class="text-[#059699] text-3xl font-semibold font-mono">Latest Photos</p>
             </div>
-            <div class="page text-[#58b1a6]">
+            <div class="page text-[#58b1a6] max-lg:hidden">
                 <label for="page">Page</label>
                 <input id="page" type="number" min="1" max="50"
                     class="w-10 border rounded-lg py-[1px] no-spinner text-center bg-[#f4f4f4]">
                 <span>of 50</span>
             </div>
         </div>
-        <div class="photos mt-10 flex gap-10 flex-wrap">
+        <div class="photos mt-10 flex gap-10 flex-wrap max-lg:p-3">
             <div class="photo-1 flex-1 min-w-[280px] flex flex-col gap-2 ">
                 <div class="relative overflow-hidden group">
                     <img class="w-full" src="https://templatemo.com/templates/templatemo_556_catalog_z/img/img-01.jpg"
@@ -119,7 +119,7 @@
             </div>
 
         </div>
-        <div class="photos mt-10 flex gap-10 flex-wrap">
+        <div class="photos mt-10 flex gap-10 flex-wrap max-lg:p-3">
             <div class="photo-1 flex-1 min-w-[280px] flex flex-col gap-2">
                 <div class="relative overflow-hidden group">
                     <img class="w-full" src="https://templatemo.com/templates/templatemo_556_catalog_z/img/img-05.jpg"
@@ -178,7 +178,7 @@
             </div>
 
         </div>
-        <div class="photos mt-10 flex gap-10 flex-wrap">
+        <div class="photos mt-10 flex gap-10 flex-wrap max-lg:p-3">
             <div class="photo-1 flex-1 min-w-[280px] flex flex-col gap-2">
                 <div class="relative overflow-hidden group">
                     <img class="w-full" src="https://templatemo.com/templates/templatemo_556_catalog_z/img/img-09.jpg"
@@ -237,7 +237,7 @@
             </div>
 
         </div>
-        <div class="photos mt-10 flex gap-10 flex-wrap">
+        <div class="photos mt-10 flex gap-10 flex-wrap max-lg:p-3">
             <div class="photo-1 flex-1 min-w-[280px] flex flex-col gap-2">
                 <div class="relative overflow-hidden group">
                     <img class="w-full" src="https://templatemo.com/templates/templatemo_556_catalog_z/img/img-13.jpg"
