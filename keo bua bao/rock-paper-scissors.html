@@ -14,58 +14,106 @@
         <div class="header w-full flex flex-col justify-center items-center p-10 text-white gap-5">
             <p class="text-[80px] font-semibold">Keo bua bao</p>
             <div class="button flex gap-5">
-                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="
-        const computerMove = pickComputerMove();
-
-        let result = '';
-        if (computerMove === 'Keo') {
-            result = 'Tie.';
-        } else if (computerMove === 'Bua') {
-            result = 'Lose.';
-        } else if (computerMove ==='Bao') {
-            result = 'Win.'
-        }
-        alert(`You picked Keo. Computer picked ${computerMove}. ${result}`);
-    "><i class="fa-solid fa-hand-scissors text-[60px]" style="color: #FFD43B;"></i></button>
-                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="
-        const computerMove = pickComputerMove();
-
-
-        let result = '';
-        if (computerMove === 'Keo') {
-            result = 'Win.';
-        } else if (computerMove === 'Bua') {
-            result = 'Tie.';
-        } else if (computerMove ==='Bao') {
-            result = 'Lose.'
-        }
-        alert(`You picked Bua. Computer picked ${computerMove}. ${result}`);
-    "><i class="fa-solid fa-hand-back-fist text-[60px]" style="color: #FFD43B;"></i></button>
-                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="
-        const computerMove = pickComputerMove();
-
-        let result = '';
-        if (computerMove === 'Keo') {
-            result = 'Lose.';
-        } else if (computerMove === 'Bua') {
-            result = 'Win.';
-        } else if (computerMove ==='Bao') {
-            result = 'Tie.';
-        }
-
-        alert(`You picked Bao. Computer picked ${computerMove}. ${result}`);
-        
-    "><i class="fa-solid fa-hand text-[60px]" style="color: #FFD43B;"></i></button>
+                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="playGame('Keo');"><i class="fa-solid fa-hand-scissors text-[60px]" style="color: #FFD43B;"></i></button>
+                
+                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="playGame('Bua');"><i class="fa-solid fa-hand-back-fist text-[60px]" style="color: #FFD43B;"></i></button>
+                
+                <button class="p-10 bg-[#191919] rounded-[80px] border-[6px] cursor-pointer" onclick="playGame('Bao');"><i class="fa-solid fa-hand text-[60px]" style="color: #FFD43B;"></i></button>
             </div>
             <!-- <div class="score">
                 <p>Wins</p>
                 <p>Losses</p>
                 <p>Ties</p>
             </div> -->
+            <div class="reset-score">
+                <p class="p-3 bg-gray-600 text-yellow-500 font-medium cursor-pointer rounded-lg" onclick="
+                   resetScore();
+                    ">Reset score</p>
+            </div>
         </div>
     </div>
 
     <script>
+        const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0,
+        ties: 0
+    };
+
+
+        function playGame(playerMove) {
+        const computerMove = pickComputerMove();
+
+            let result = '';
+
+            if (playerMove === 'Bao') {
+                if (computerMove === 'Keo') {
+                result = 'Lose.';
+            }   else if (computerMove === 'Bua') {
+                result = 'Win.';
+            }   else if (computerMove ==='Bao') {
+                result = 'Tie.';
+            }
+
+            if (result === 'Win.') {
+                score.wins += 1;
+            } else if (result === 'Lose.') {
+                score.losses += 1;
+            } else if (result ==='Tie.') {
+                score.ties += 1;
+            }
+
+                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+                Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            }
+            
+            else if (playerMove === 'Bua') {
+                if (computerMove === 'Keo') {
+                result = 'Lose.';
+            }   else if (computerMove === 'Bua') {
+                result = 'Win.';
+            }   else if (computerMove ==='Bao') {
+                result = 'Tie.';
+            }
+
+            
+            if (result === 'Win.') {
+                score.wins += 1;
+            } else if (result === 'Lose.') {
+                score.losses += 1;
+            } else if (result ==='Tie.') {
+                score.ties += 1;
+            }
+
+                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+                Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            }
+
+            else if (playerMove === 'Keo') {
+                if (computerMove === 'Keo') {
+                result = 'Lose.';
+            }   else if (computerMove === 'Bua') {
+                result = 'Win.';
+            }   else if (computerMove ==='Bao') {
+                result = 'Tie.';
+            }
+
+            
+            if (result === 'Win.') {
+                score.wins += 1;
+            } else if (result === 'Lose.') {
+                score.losses += 1;
+            } else if (result ==='Tie.') {
+                score.ties += 1;
+            }
+
+            localStorage.setItem('score', JSON.stringify(score));
+
+                alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+                Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`);
+            }
+        }
+
 
         function pickComputerMove() {
             const randomNumber = Math.random();
@@ -80,6 +128,12 @@
             return computerMove;
         }
 
+        function resetScore () {
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+            alert("Score has been reset!");
+        }
 
 
     </script>
